@@ -62,6 +62,13 @@
                     </ion-card>
                 </ion-col>
             </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list id="expenses-list">
+
+                    </ion-list>
+                </ion-col>
+            </ion-row>
         </ion-grid>
     </ion-content>
 </ion-app>
@@ -70,6 +77,7 @@
     const amountInput = document.querySelector('#input-amount');
     const cancelBtn = document.querySelector('#btn-cancel');
     const confirmBtn = document.querySelector('#btn-confirm');
+    const expensesList = document.querySelector('#expenses-list');
 
     confirmBtn.addEventListener('click', () => {
         const enteredReason = reasonInput.value;
@@ -82,7 +90,9 @@
         ) {
             return;
         }
-        console.log(enteredReason, enteredAmount);
+        const newItem = document.createElement('ion-item');
+        newItem.textContent = enteredReason + ': $' + enteredAmount;
+        expensesList.appendChild(newItem);
     })
 </script>
 </body>
