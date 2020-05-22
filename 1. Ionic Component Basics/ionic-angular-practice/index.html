@@ -74,6 +74,7 @@
             </ion-row>
         </ion-grid>
     </ion-content>
+    <div id="ion-alert"></div>
 </ion-app>
 <script>
     const reasonInput = document.querySelector('#input-reason');
@@ -82,6 +83,7 @@
     const confirmBtn = document.querySelector('#btn-confirm');
     const expensesList = document.querySelector('#expenses-list');
     const totalExpensesSpan = document.querySelector('#total-expenses');
+    const alertDiv = document.querySelector('#ion-alert');
 
     let totalExpenses = 0;
 
@@ -99,6 +101,12 @@
             enteredAmount <= 0 ||
             enteredAmount.trim().length <= 0
         ) {
+            const alert = document.createElement('ion-alert');
+            alert.message = 'Please enter a valid reason and amount';
+            alert.header = 'Invalid inputs';
+            alert.buttons = ['Okay'];
+            alertDiv.appendChild(alert);
+            alert.present();
             return;
         }
         const newItem = document.createElement('ion-item');
