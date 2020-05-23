@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+    <title>My courses</title>
+    <script src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js" type="module"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" rel="stylesheet"/>
+</head>
+<body>
+<ion-app>
+    <ion-header>
+        <ion-toolbar color="primary">
+            <ion-title>My courses</ion-title>
+        </ion-toolbar>
+    </ion-header>
+    <ion-content>
+        <ion-card>
+            <ion-card-content>
+                <ion-item>
+                    <ion-label position="floating">Course name</ion-label>
+                    <ion-input id="input-course" type="text"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Course rating (1-5)</ion-label>
+                    <ion-input id="input-rating" type="number"></ion-input>
+                </ion-item>
+                <div class="ion-margin">
+                    <ion-button id="btn-confirm">
+                        <ion-icon name="add" slot="start"></ion-icon>
+                        Add
+                    </ion-button>
+                </div>
+            </ion-card-content>
+        </ion-card>
+        <ion-list id="expenses-list"></ion-list>
+    </ion-content>
+</ion-app>
+<script>
+    const courseInput = document.querySelector('#input-course');
+    const ratingInput = document.querySelector('#input-rating');
+    const confirmBtn = document.querySelector('#btn-confirm');
+    const expensesList = document.querySelector('#expenses-list');
+
+    confirmBtn.addEventListener('click', () => {
+        const enteredCourse = courseInput.value;
+        const enteredRating = ratingInput.value;
+
+        const newItem = document.createElement('ion-item');
+        newItem.textContent = enteredCourse + ': $' + enteredRating;
+        expensesList.appendChild(newItem);
+    });
+</script>
+</body>
+</html>
