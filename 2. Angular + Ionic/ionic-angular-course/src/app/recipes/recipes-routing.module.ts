@@ -6,7 +6,16 @@ import {RecipesPage} from './recipes.page';
 const routes: Routes = [
     {
         path: '',
-        component: RecipesPage
+        children: [
+            {
+                path: '',
+                component: RecipesPage
+            },
+            {
+                path: ':recipeId',
+                loadChildren: () => import('./recipe-detail/recipe-detail.module').then(m => m.RecipeDetailPageModule)
+            }
+        ]
     }
 ];
 
