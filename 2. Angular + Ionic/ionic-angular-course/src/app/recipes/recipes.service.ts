@@ -13,7 +13,7 @@ export class RecipesService {
       ingredients: ['French fries', 'Chicken', 'Salad']
     },
     {
-      id: 'r1',
+      id: 'r2',
       title: 'Spaghetti',
       imageUrl: 'https://www.errenskitchen.com/wp-content/uploads/2015/02/Quick-Easy-Spaghetti-Bolognese2-1.jpg',
       ingredients: ['Spaghetti', 'Meat', 'Tomatoes']
