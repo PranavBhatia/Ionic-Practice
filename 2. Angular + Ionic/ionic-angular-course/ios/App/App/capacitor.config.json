@@ -1,0 +1,13 @@
+{
+  "appId": "com.udemycourse.ionicsource",
+  "appName": "com.udemycourse.ionicsource",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}
