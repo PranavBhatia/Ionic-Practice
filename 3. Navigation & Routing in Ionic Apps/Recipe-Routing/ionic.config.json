@@ -1,0 +1,7 @@
+{
+  "name": "Recipe-Routing",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
